@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aventra – Discord Bot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mark" viewBox="0 0 1254 1254">
+      <path fill="#fff" d="M627 165C655 225 680 280 680 335C675 420 600 520 520 610C470 665 400 725 337 782C370 778 405 768 437 752C520 815 590 930 616 1080C540 960 400 820 250 818C200 818 160 835 132 852C150 760 220 690 300 610C420 490 540 330 627 165Z"/>
+      <path fill="#fff" d="M712 318C760 375 830 490 900 580C960 660 1040 710 1085 770C1100 795 1112 825 1120 857C1090 835 1060 828 1030 829C900 832 740 950 628 1102C650 960 720 830 840 735C845 730 843 722 838 718C770 645 700 580 648 510C685 445 705 380 712 318Z"/>
+    </symbol>
+    <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b8cff"/><stop offset="1" stop-color="#8ab8fd"/></linearGradient>
+  </defs>
+</svg>
+
+<header><div class="wrap"><nav>
+  <a class="brand" href="#home"><svg viewBox="0 0 1254 1254"><rect width="1254" height="1254" fill="url(#lg)"/><use href="#mark"/></svg><span class="bn">Skyline</span></a>
+  <a class="l" href="#demo" data-v="demo">Demo</a>
+  <a class="l" href="#commands" data-v="commands">Commands</a>
+  <a class="l hide" href="#community" data-v="community">Community</a>
+  <a class="l hide" href="#privacy" data-v="privacy">Policies</a>
+  <a class="btn" href="#" data-invite style="padding:10px 16px;font-size:15px;margin-left:6px">Add to Discord</a>
+</nav></div></header>
+
+<main class="wrap">
+
+<div class="view" id="v-home">
+  <div class="hero">
+    <div>
+      <h1>Keep your server safe, organized, and running smoothly.</h1>
+      <p class="lead">Aventra is a multi-server security and utility bot with moderation, anti-raid and anti-nuke protection, verification, logging, and more.</p>
+      <div class="row"><a class="btn" href="#" data-invite>Add to Discord</a><a class="btn ghost" href="#commands">See commands</a></div>
+    </div>
+    <div class="chat" aria-label="Live bot demo">
+      <div class="chat-top"># general</div>
+      <div class="msgs" id="msgs"></div>
+      <div class="chips" id="chips"></div>
+    </div>
+  </div>
+  <section>
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="card"><h3>Protection</h3><p>Antinuke, antiraid, tripwire, and automod keep bad actors and spam out.</p></div>
+      <div class="card"><h3>Moderation and logs</h3><p>Timeouts, bans, and numbered cases, with server event logging your team can review.</p></div>
+      <div class="card"><h3>Verification and utility</h3><p>Verify new members, including Roblox verification, plus scheduled posts and handy server tools.</p></div>
+    </div>
+  </section>
+  <div class="cta"><h2>Ready in about a minute</h2><p>Invite the bot, run !help, and set up the protection you need.</p><a class="btn" href="#" data-invite>Add to Discord</a></div>
+</div>
+
+<div class="view" id="v-demo"><div class="page">
+  <h1>Try it live</h1>
+  <p class="lead">Tap a command to see how <span class="bn">Skyline</span> replies. This demo runs right in your browser.</p>
+  <div class="chat" style="max-width:560px">
+    <div class="chat-top"># bot-testing</div>
+    <div class="msgs" id="msgs2"></div>
+    <div class="chips" id="chips2"></div>
+  </div>
+</div></div>
+
+<div class="view" id="v-commands"><div class="page">
+  <h1>Commands</h1>
+  <p class="lead">Aventra uses the ! prefix. Run !help in Discord to browse all 13 categories.</p>
+  <div id="cmdlist"></div>
+</div></div>
+
+<div class="view" id="v-community"><div class="page">
+  <h1>Community</h1>
+  <p class="lead">Questions, ideas, or bugs? Come say hi in our support server.</p>
+  <div class="row" style="margin-bottom:24px"><a class="btn" href="#" data-support>Join the server</a></div>
+  <div id="widgetbox"></div>
+</div></div>
+
+<div class="view legal" id="v-privacy"><div class="page">
+  <h1>Privacy Policy</h1>
+  <p>Last updated: <span id="d1"></span>. <a href="#terms">Read the Terms of Service</a>.</p>
+  <h2>What we collect</h2>
+  <p>To work, <span class="bn">Aventra</span> stores Discord IDs for servers, channels, roles, and users, plus the settings you choose. Features you turn on store their own data, such as moderation cases (case number, reason, and duration), log settings, and verification records, including a linked Roblox account where Roblox verification is used. Automod may scan messages to apply your rules.</p>
+  <h2>What we don’t collect</h2>
+  <p>We never sell your data or share it with advertisers.</p>
+  <h2>How long we keep it</h2>
+  <p>Data stays while the bot is in your server. Remove the bot and your server’s data is deleted within 30 days. Members can ask for their own data to be removed.</p>
+  <h2>Contact</h2>
+  <p>Reach us through the <a href="#community">support server</a>.</p>
+</div></div>
+
+<div class="view legal" id="v-terms"><div class="page">
+  <h1>Terms of Service</h1>
+  <p>Last updated: <span id="d2"></span>. <a href="#privacy">Read the Privacy Policy</a>.</p>
+  <h2>Using the bot</h2>
+  <p>By adding <span class="bn">Skyline</span> to a server, you agree to follow the Discord Terms of Service and Community Guidelines.</p>
+  <h2>Acceptable use</h2>
+  <p>Don’t use the bot to harass people, spam, break the law, or try to exploit or overload it.</p>
+  <h2>Availability</h2>
+  <p>The bot is provided as is. We aim for good uptime but can’t promise it, and features may change.</p>
+  <h2>Removal</h2>
+  <p>We may remove the bot from servers that break these terms.</p>
+</div></div>
+
+</main>
+
+<footer><div class="wrap">
+  <div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#community">Support</a></div>
+  <div>© <span id="yr"></span> <span class="bn">Skyline</span></div>
+</div></footer>
+
+<script src="script.js"></script>
+</body>
+</html>
