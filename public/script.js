@@ -144,15 +144,24 @@ function menu(open){links.classList.toggle("open",open);burger.setAttribute("ari
 burger.onclick=function(){menu(!links.classList.contains("open"))};
 links.addEventListener("click",function(e){if(e.target.closest("a"))menu(false)});
 
-/* router (views + in-page sections on home) */
+/* router: real paths (/privacy) via the History API; hashes only for sections on the home page */
 var views=["home","demo","commands","community","privacy","terms"];
 var sections=["status","features","premium","team"];
 function route(){
-  var h=(location.hash||"#home").slice(1),sec=null;
-  if(sections.indexOf(h)>=0){sec=h;h="home"}
-  if(views.indexOf(h)<0)h="home";
-  views.forEach(function(v){$("#v-"+v).classList.toggle("on",v===h)});
-  document.querySelectorAll(".links a.l").forEach(function(a){a.classList.toggle("on",a.dataset.v===h||(h==="terms"&&a.dataset.v==="privacy"))});
-  if(sec){var el=document.getElementById(sec);if(el)el.scrollIntoView()}else window.scrollTo(0,0);
+  var p=location.pathname.replace(/\/+$/,"").slice(1)||"home",h=location.hash.slice(1);
+  if(views.indexOf(p)<0)p="home";
+  views.forEach(function(v){$("#v-"+v).classList.toggle("on",v===p)});
+  document.querySelectorAll(".links a.l").forEach(function(a){a.classList.toggle("on",a.dataset.v===p||(p==="terms"&&a.dataset.v==="privacy"))});
+  var el=p==="home"&&sections.indexOf(h)>=0&&document.getElementById(h);
+  if(el)el.scrollIntoView();else window.scrollTo(0,0);
 }
-window.addEventListener("hashchange",route);route();
+document.addEventListener("click",function(e){
+  var a=e.target.closest("a[href^='/']");
+  if(!a||a.target||e.button||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+  var u=new URL(a.href);if(u.origin!==location.origin)return;
+  e.preventDefault();
+  history.pushState(null,"",u.pathname+u.hash);route();
+});
+window.addEventListener("popstate",route);
+window.addEventListener("hashchange",route);
+route();
