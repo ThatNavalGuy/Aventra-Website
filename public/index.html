@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
 <title>Aventra – Discord Bot</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -19,44 +21,73 @@
   </defs>
 </svg>
 
-<header><div class="wrap"><nav>
-  <a class="brand" href="#home"><svg viewBox="0 0 1254 1254"><rect width="1254" height="1254" fill="url(#lg)"/><use href="#mark"/></svg><span class="bn">Skyline</span></a>
-  <a class="l" href="#demo" data-v="demo">Demo</a>
-  <a class="l" href="#commands" data-v="commands">Commands</a>
-  <a class="l hide" href="#community" data-v="community">Community</a>
-  <a class="l hide" href="#privacy" data-v="privacy">Policies</a>
-  <a class="btn" href="#" data-invite style="padding:10px 16px;font-size:15px;margin-left:6px">Add to Discord</a>
-</nav></div></header>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#home"><svg viewBox="0 0 1254 1254"><rect width="1254" height="1254" fill="url(#lg)"/><use href="#mark"/></svg><span class="bn">Aventra</span></a>
+      <div class="links" id="links">
+        <a class="l" href="#home" data-v="home">Home</a>
+        <a class="l" href="#demo" data-v="demo">Demo</a>
+        <a class="l" href="#commands" data-v="commands">Commands</a>
+        <a class="l" href="#community" data-v="community">Community</a>
+        <a class="l" href="#privacy" data-v="privacy">Policies</a>
+        <a class="btn sm" href="#" data-invite>Add to Discord</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
 
 <main class="wrap">
 
 <div class="view" id="v-home">
-  <div class="hero">
-    <div>
-      <h1>Keep your server safe, organized, and running smoothly.</h1>
-      <p class="lead">Aventra is a multi-server security and utility bot with moderation, anti-raid and anti-nuke protection, verification, logging, and more.</p>
-      <div class="row"><a class="btn" href="#" data-invite>Add to Discord</a><a class="btn ghost" href="#commands">See commands</a></div>
-    </div>
-    <div class="chat" aria-label="Live bot demo">
-      <div class="chat-top"># general</div>
-      <div class="msgs" id="msgs"></div>
-      <div class="chips" id="chips"></div>
-    </div>
-  </div>
-  <section>
-    <h2>What it does</h2>
-    <div class="grid">
-      <div class="card"><h3>Protection</h3><p>Antinuke, antiraid, tripwire, and automod keep bad actors and spam out.</p></div>
-      <div class="card"><h3>Moderation and logs</h3><p>Timeouts, bans, and numbered cases, with server event logging your team can review.</p></div>
-      <div class="card"><h3>Verification and utility</h3><p>Verify new members, including Roblox verification, plus scheduled posts and handy server tools.</p></div>
+  <section class="hero">
+    <h1>Security and Community Management</h1>
+    <p class="lead">Moderation, anti-raid and anti-nuke protection, verification, and logging. Everything your server needs, in one bot.</p>
+    <div class="row center"><a class="btn" href="#" data-invite>Add to Discord</a><a class="btn ghost" href="#demo">Try the demo</a></div>
+  </section>
+
+  <section class="stats" id="stats"></section>
+
+  <section class="block" id="status">
+    <div class="panel" id="statusbox"></div>
+  </section>
+
+  <section class="block" id="features">
+    <h2>Everything you need</h2>
+    <p class="sub">Powerful tools to keep your community safe, organized, and running smoothly.</p>
+    <div class="list" id="featlist"></div>
+  </section>
+
+  <section class="block" id="premium">
+    <div class="panel premium">
+      <h2>Upgrade to <span class="gold">Premium</span></h2>
+      <p class="sub" id="premsub"></p>
+      <div class="list" id="premlist"></div>
+      <a class="btn gold-btn" href="#" data-support>View Premium plans</a>
     </div>
   </section>
-  <div class="cta"><h2>Ready in about a minute</h2><p>Invite the bot, run !help, and set up the protection you need.</p><a class="btn" href="#" data-invite>Add to Discord</a></div>
+
+  <section class="block" id="team">
+    <h2>Meet our team</h2>
+    <p class="sub" id="teamsub"></p>
+    <div class="list" id="teamlist"></div>
+  </section>
+
+  <section class="block">
+    <div class="panel cta">
+      <h2>Ready to get started?</h2>
+      <p class="sub">Invite the bot, run !help, and set up the protection you need. It takes about a minute.</p>
+      <div class="stack"><a class="btn" href="#" data-invite>Add to Discord</a><a class="btn ghost" href="#" data-support>Join community</a></div>
+    </div>
+  </section>
 </div>
 
 <div class="view" id="v-demo"><div class="page">
   <h1>Try it live</h1>
-  <p class="lead">Tap a command to see how <span class="bn">Skyline</span> replies. This demo runs right in your browser.</p>
+  <p class="lead">Tap a command to see how <span class="bn">Aventra</span> replies. This demo runs right in your browser.</p>
   <div class="chat" style="max-width:560px">
     <div class="chat-top"># bot-testing</div>
     <div class="msgs" id="msgs2"></div>
@@ -94,7 +125,7 @@
   <h1>Terms of Service</h1>
   <p>Last updated: <span id="d2"></span>. <a href="#privacy">Read the Privacy Policy</a>.</p>
   <h2>Using the bot</h2>
-  <p>By adding <span class="bn">Skyline</span> to a server, you agree to follow the Discord Terms of Service and Community Guidelines.</p>
+  <p>By adding <span class="bn">Aventra</span> to a server, you agree to follow the Discord Terms of Service and Community Guidelines.</p>
   <h2>Acceptable use</h2>
   <p>Don’t use the bot to harass people, spam, break the law, or try to exploit or overload it.</p>
   <h2>Availability</h2>
@@ -105,10 +136,20 @@
 
 </main>
 
-<footer><div class="wrap">
-  <div><a href="#privacy">Privacy</a><a href="#terms">Terms</a><a href="#community">Support</a></div>
-  <div>© <span id="yr"></span> <span class="bn">Skyline</span></div>
-</div></footer>
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <a class="brand" href="#home"><svg viewBox="0 0 1254 1254"><rect width="1254" height="1254" fill="url(#lg)"/><use href="#mark"/></svg><span class="bn">Aventra</span></a>
+        <p>Your all-in-one Discord bot for server security, moderation, and community management.</p>
+      </div>
+      <div class="fcol"><h4>Product</h4><a href="#status">Status</a><a href="#premium">Premium</a><a href="#commands">Commands</a><a href="#demo">Demo</a></div>
+      <div class="fcol"><h4>Community</h4><a href="#" data-support>Community server</a><a href="#team">Team</a></div>
+      <div class="fcol"><h4>Legal</h4><a href="#terms">Terms of Service</a><a href="#privacy">Privacy Policy</a></div>
+    </div>
+    <div class="fbot"><span>© <span id="yr"></span> <span class="bn">Aventra</span>. All rights reserved.</span><span class="ok" id="footstatus"></span></div>
+  </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
