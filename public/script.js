@@ -34,13 +34,6 @@ var CONFIG = {
     ["star", "Premium commands", "A catalog of commands only available with Premium."]
   ],
 
-  /* Team. Replace the example, or set team: [] to hide the section.
-     Add an avatar image with img: "team/you.png" if you want one. */
-  teamText: "The people behind the bot.",
-  team: [
-    { name: "Your name", role: "Founder", bio: "Add a short line about what you do.", tags: ["Development", "Support"] }
-  ],
-
   commands: [
     ["Information","Help, status, prefix, and appearance."],
     ["Antinuke","Anti-nuke protection commands."],
@@ -103,13 +96,6 @@ if(CONFIG.status.length){
 $("#featlist").innerHTML=CONFIG.features.map(item).join("");
 $("#premsub").textContent=CONFIG.premiumText;
 $("#premlist").innerHTML=CONFIG.premium.map(item).join("");
-
-if(CONFIG.team.length){
-  $("#teamsub").textContent=CONFIG.teamText;
-  $("#teamlist").innerHTML=CONFIG.team.map(function(m){
-    return '<div class="item member"><div class="avatar">'+(m.img?'<img src="'+m.img+'" alt="">':m.name.charAt(0).toUpperCase())+'</div><div><h3>'+m.name+'</h3><div class="role">'+m.role+'</div><p>'+m.bio+'</p><div class="tags">'+(m.tags||[]).map(function(t){return '<span class="tag">'+t+'</span>'}).join("")+'</div></div></div>';
-  }).join("");
-}else{$("#team").style.display="none"}
 
 $("#cmdlist").innerHTML=CONFIG.commands.map(function(c){return '<div class="cmd"><code>'+c[0]+'</code><span>'+c[1]+'</span></div>'}).join("");
 
